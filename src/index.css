@@ -1,0 +1,375 @@
+:root {
+  --color-primary: #4caf50;
+  --color-primary-dark: #388e3c;
+  --color-primary-light: #c8e6c9;
+  --color-accent: #8bc34a;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-background: #f5f5f5;
+  --color-card: #ffffff;
+  --color-border: #e0e0e0;
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-danger: #f44336;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+body {
+  height: 100vh;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  min-height: 66vh;
+  display: grid;
+  grid-template-columns: 34rem 44rem;
+  column-gap: 4rem;
+  align-items: start;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar h1 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar li {
+  display: grid;
+  grid-template-columns: 4.8rem 1fr auto;
+  align-items: center;
+  column-gap: 1.6rem;
+  padding: 1.2rem;
+  background-color: var(--color-card);
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar li.selected {
+  background-color: var(--color-primary-light);
+  border-left: 4px solid var(--color-primary);
+}
+
+.sidebar li img {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar li h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar li .location {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.4rem;
+}
+
+.sidebar li .needs-water {
+  color: var(--color-danger);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.sidebar li .soon-water {
+  color: var(--color-warning);
+  font-size: 1.2rem;
+}
+
+.sidebar li .watered {
+  color: var(--color-success);
+  font-size: 1.2rem;
+}
+
+.plant-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.water-button {
+  background-color: #e3f2fd;
+  border: none;
+  border-radius: 50%;
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.water-button:hover {
+  background-color: #bbdefb;
+  transform: scale(1.1);
+}
+
+/* Form Styles */
+.add-plant-form {
+  background-color: var(--color-card);
+  padding: 2rem;
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.add-plant-form h2 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1.6rem;
+}
+
+.add-plant-form label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.add-plant-form input,
+.add-plant-form textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-bottom: 1.6rem;
+}
+
+.add-plant-form textarea {
+  height: 8rem;
+  resize: vertical;
+}
+
+.add-plant-form input:focus,
+.add-plant-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.add-plant-form .button {
+  width: 100%;
+}
+
+/* Plant Details Styles */
+.plant-details {
+  background-color: var(--color-card);
+  border-radius: 7px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plant-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+.plant-header img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-primary-light);
+}
+
+.plant-header h2 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.plant-header .location {
+  font-size: 1.6rem;
+  color: var(--color-text-light);
+}
+
+.watering-info {
+  margin-bottom: 2.4rem;
+}
+
+.info-card {
+  background-color: var(--color-primary-light);
+  padding: 1.6rem;
+  border-radius: 7px;
+}
+
+.info-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-primary-dark);
+}
+
+.info-card p {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.water-progress {
+  height: 1rem;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 1.6rem 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.water-now-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.notes-section {
+  background-color: #f9f9f9;
+  padding: 1.6rem;
+  border-radius: 7px;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.notes-header h3 {
+  font-size: 1.8rem;
+  color: var(--color-text);
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  text-decoration: underline;
+}
+
+.notes-content {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  min-height: 8rem;
+}
+
+.edit-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-notes textarea {
+  width: 100%;
+  height: 12rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.edit-notes textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.save-btn {
+  align-self: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+
+  .sidebar li {
+    grid-template-columns: 4rem 1fr;
+  }
+
+  .plant-buttons {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}
