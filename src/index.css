@@ -11,6 +11,7 @@
   --color-success: #4caf50;
   --color-warning: #ff9800;
   --color-danger: #f44336;
+  --color-overlay: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -159,45 +160,107 @@ body {
   transform: scale(1.1);
 }
 
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background-color: var(--color-card);
+  border-radius: 7px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 60rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: var(--color-danger);
+}
+
 /* Form Styles */
 .add-plant-form {
-  background-color: var(--color-card);
-  padding: 2rem;
-  border-radius: 7px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  padding: 2.5rem;
 }
 
 .add-plant-form h2 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: var(--color-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
   margin-bottom: 1.6rem;
 }
 
-.add-plant-form label {
+.form-group {
+  margin-bottom: 1.6rem;
+}
+
+.form-group label {
   display: block;
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 0.6rem;
 }
 
-.add-plant-form input,
-.add-plant-form textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 1rem;
   font-size: 1.4rem;
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  margin-bottom: 1.6rem;
 }
 
-.add-plant-form textarea {
-  height: 8rem;
+.form-group textarea {
+  height: 10rem;
   resize: vertical;
 }
 
-.add-plant-form input:focus,
-.add-plant-form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
@@ -205,6 +268,9 @@ body {
 
 .add-plant-form .button {
   width: 100%;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  margin-top: 1rem;
 }
 
 /* Plant Details Styles */
@@ -354,6 +420,10 @@ body {
   .sidebar {
     width: 100%;
   }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
@@ -371,5 +441,9 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     margin-top: 1rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
   }
 }
