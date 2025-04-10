@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+### Plant Care App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application to manage your houseplants, track watering schedules, and store care notes. Perfect for anyone looking to organize and streamline plant maintenance.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/04b23e63-81ce-4a82-aee3-f55bafdfa581" controls width="600">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Plant List**: Displays all your plants with their watering status (needs water soon, needs water now, or recently watered).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Add New Plants**: Quickly add new plants by specifying the name, location, watering frequency, image, and care notes.
 
-### `npm test`
+- **Water a Plant**: Update the last watered date at a click, letting the app recalculate the next watering schedule.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Plant Details**: View in-depth information, including editable care notes for each plant.
 
-### `npm run build`
+- **Automated Calculations**: The app calculates how many days have passed since the last watering and displays when the next watering is due.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```plaintext
+git clone https://github.com/ceferrei/Plant-Care-react.git
+```
 
-### `npm run eject`
+2. Navigate to the project folder:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```plaintext
+cd Plant-Care-react
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```plaintext
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the application:
 
-## Learn More
+```plaintext
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app should run at [http://localhost:3000](http://localhost:3000) by default.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+- Check the sidebar to see all registered plants.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Click Add Plant to create a new plant entry, filling out the name, location, watering frequency, image, and care notes.
 
-### Analyzing the Bundle Size
+- In the plant list, click Details to see a plant’s info and edit its care notes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Click the water drop icon (💧) or Water Now to update the last watered date, ensuring your plant stays hydrated.
 
-### Making a Progressive Web App
+## Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The project includes basic styling, but feel free to tweak colors, fonts, and layout in the main stylesheet or within components.
 
-### Advanced Configuration
+Add more form fields if you want to store additional information about each plant.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it.
